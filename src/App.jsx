@@ -7,8 +7,7 @@ import { Route, Routes } from 'react-router';
 import PokemonDetails from './components/PokemonDetails/PokemonDetails';
 import { useParams } from 'react-router';
 import PokemonForm from './components/PokemonForm/PokemonForm';
-
-
+import './App.css';
 
 
 const initialState = [
@@ -19,13 +18,16 @@ const initialState = [
   { _id: 5, name: 'charmeleon', weight: 190, height: 11 },
 ];
 
-  const addPokemon = (newPokemonData) => {
+
+
+const App = () => {
+  const [pokemon, setPokemon] = useState(initialState);
+
+    const addPokemon = (newPokemonData) => {
     newPokemonData._id = pokemon.length + 1;
     setPokemon([...pokemon, newPokemonData]);
   };
 
-const App = () => {
-  const [pokemon, setPokemon] = useState(initialState);
   return (
     <>
       <h1>Pokemon!</h1>
